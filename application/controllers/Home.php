@@ -219,10 +219,10 @@ class Home extends CI_Controller {
 				}
 				$j++;
 			}
-			
+			$default = $newData;
 			if($error){
 				$this->session->set_flashdata('error', 'Number should not negative value.');
-				$default = $newData;
+				//$default = $newData;
 			}else{
 				
 				$insert = $this->home_model->insertToSlot(serialize($newData));
@@ -233,7 +233,7 @@ class Home extends CI_Controller {
 				}else{
 					
 					$this->session->set_flashdata('error', 'Somthing error! please try again.');
-					$default = $newData;
+					//$default = $newData;
 				}
 			}
 		}
